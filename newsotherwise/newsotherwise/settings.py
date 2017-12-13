@@ -230,6 +230,7 @@ if DJANGO_VERSION < (1, 9):
 ################
 
 INSTALLED_APPS = (
+    "newsotherwise",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -334,3 +335,14 @@ except ImportError:
     pass
 else:
     set_dynamic_settings(globals())
+
+
+##############################
+# CUSTOM USER-ADDED SETTINGS #
+##############################
+
+#  User doesn't have to choose what they want to search for; search will always be Everything
+SEARCH_MODEL_CHOICES = []
+
+# Remove bottom and left menus
+PAGE_MENU_TEMPLATES = ( (1, "Top navigation bar", "pages/menus/dropdown.html"), )
