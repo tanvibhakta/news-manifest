@@ -147,13 +147,13 @@ DATABASES = {
         # DB name or path to database file if using sqlite3.
         "NAME": "",
         # Not used with sqlite3.
-        "USER": "",
+        # "USER": "",
         # Not used with sqlite3.
-        "PASSWORD": "",
+        # "PASSWORD": "",
         # Set to empty string for localhost. Not used with sqlite3.
-        "HOST": "",
+        # "HOST": "",
         # Set to empty string for default. Not used with sqlite3.
-        "PORT": "",
+        # "PORT": "",
     }
 }
 
@@ -347,4 +347,4 @@ SEARCH_MODEL_CHOICES = []
 # Remove bottom and left menus
 PAGE_MENU_TEMPLATES = ( (1, "Top navigation bar", "pages/menus/dropdown.html"), )
 
-SITE_TITLE_LOGO: "./static/logos/logo_main_english.png"
+# SITE_TITLE_LOGO = "./static/logos/logo_main_english.png"
