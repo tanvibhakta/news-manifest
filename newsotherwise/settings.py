@@ -118,7 +118,7 @@ LANGUAGES = (
 # A boolean that turns on/off debug mode. When set to ``True``, stack traces
 # are displayed for error pages. Should always be set to ``False`` in
 # production. Best set to ``True`` in local_settings.py
-DEBUG = False
+DEBUG = True
 
 # Whether a user's session cookie expires when the Web browser is closed.
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
@@ -143,17 +143,17 @@ FILE_UPLOAD_PERMISSIONS = 0o644
 DATABASES = {
     "default": {
         # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
-        "ENGINE": "django.db.backends.",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
         # DB name or path to database file if using sqlite3.
-        "NAME": "",
+        "NAME": "dbnewsotherwise",
         # Not used with sqlite3.
-        # "USER": "",
+        "USER": "newsotherwise",
         # Not used with sqlite3.
-        # "PASSWORD": "",
+        "PASSWORD": "work",
         # Set to empty string for localhost. Not used with sqlite3.
-        # "HOST": "",
+        "HOST": "139.59.28.21",
         # Set to empty string for default. Not used with sqlite3.
-        # "PORT": "",
+        "PORT": "",
     }
 }
 
