@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
   <link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
   <link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">
+   <!--TODO: missing sheet on deploy why  -->
   <link rel="stylesheet" href="{% static "css/custom.css" %}">
   {% if LANGUAGE_BIDI %}
   <link rel="stylesheet" href="{% static "css/bootstrap-rtl.css" %}">
@@ -69,7 +70,7 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-left">
-          <li><a href="#">Edition button comes here</a></li>
+          <!-- <li><a href="#">Edition button comes here</a></li> -->
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <!-- TODO: smaller margins -->
@@ -77,7 +78,7 @@
           <li><a href="https://www.youtube.com/channel/UCVDX7Y1luZzm2VdQwN22dyA?view_as=subscriber"><i class="fa fa-youtube-play"></i></a></li>
           <li><a href="https://twitter.com/NewsWhys"><i class="fa fa-twitter"></i></a></li>
           <li><a href="https://www.instagram.com/newswhys/"><i class="fa fa-instagram"></i></a></li>
-          <!-- <li><a href="#"><i class="fa fa-tumblr"></i></a></li> -->
+a          <!-- <li><a href="#"><i class="fa fa-tumblr"></i></a></li> -->
           <li><a href="https://plus.google.com/u/1/103368278925712009285"><i class="fa fa-google-plus"></i></a></li>
           <li><a href="https://in.pinterest.com/NewzWhys/"><i class="fa fa-pinterest"></i></a></li>
           <!-- <li><a href="#"><i class="fa fa-bookmark"></i></a></li> -->
@@ -151,13 +152,13 @@
     <!-- {% page_menu "pages/menus/footer.html" %} -->
     <div class="row">
       <p class="site-info text-center">
-        <a href="#">About us</a>
+        <a href="/about">About us</a>
         <span class="separator">|</span>
-        <a href="#">Contact us</a>
+        <a href="/contact">Contact us</a>
         <span class="separator">|</span>
-        <a href="#">Terms of Service</a>
+        <a href="/tos">Terms of Service</a>
         <span class="separator">|</span>
-        <a href="#">Privacy Policy</a>
+        <a href="/privacy">Privacy Policy</a>
         <span class="separator">|</span>
         {% trans "Copyright 2018 © " %}
         <a href="newsotherwise.com">NEWSOTHERWISE</a>
