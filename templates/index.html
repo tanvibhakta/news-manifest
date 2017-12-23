@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block main %}
-{% blocktrans %}
+<!-- {% blocktrans %}
 <h2>Congratulations!</h2>
 <p>
     Welcome to your new Mezzanine powered website.
@@ -24,5 +24,28 @@
     <li><a href="http://mezzanine.jupo.org/docs/configuration.html#default-settings">Full list of settings</a></li>
     <li><a href="http://mezzanine.jupo.org/docs/deployment.html">Deploying to a production server</a></li>
 </ul>
-{% endblocktrans %}
+{% endblocktrans %} -->
+
+<div><!-- Recent Posts -->
+  {% load blog_tags keyword_tags i18n %}
+  {% blog_recent_posts 5 as recent_posts %}
+  {% if recent_posts %}
+  <h3>{% trans "Recent Posts" %}</h3>
+  {% for recent_post in recent_posts %}
+  <h4>
+    <a class="text-capitalize" href="{{ recent_post.get_absolute_url }}">
+      {{ recent_post.title }}
+    </a>
+    <small style="padding-left:10px;">
+      {{ recent_post.publish_date|timesince }} {% trans "ago" %}
+    </small>
+  </h4>
+  <div class="recent-summary">
+    {{ recent_post.description|safe }}
+  </div>
+  <hr>
+  {% endfor %}
+  {% endif %}
+</div><!-- Recent Posts -->
+
 {% endblock %}

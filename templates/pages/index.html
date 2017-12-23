@@ -1,28 +1,49 @@
 {% extends "pages/richtextpage.html" %}
-{% load mezzanine_tags blog_tags i18n %}
+{% load mezzanine_tags blog_tags i18n keyword_tags %}
 
 {% block main %}
 
 {{ block.super }}
 <hr/>
-{% block blog_recent_posts %}
+<!-- {% block blog_recent_posts %}
+{% blog_recent_posts 5 as recent_posts %}
+{% if recent_posts %}
+<h3>{% trans "Recent Posts" %}</h3>
+<ul class="unstyled recent-posts">
+{% for recent_post in recent_posts %}
+<li><a href="{{ recent_post.get_absolute_url }}">{{ recent_post.title }}</a></li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endblock %} -->
+
+<div><!-- Recent Posts -->
   {% blog_recent_posts 5 as recent_posts %}
   {% if recent_posts %}
-    <h3>{% trans "Recent Posts" %}</h3>
-    <ul class="unstyled recent-posts">
-    {% for recent_post in recent_posts %}
-      <li><a href="{{ recent_post.get_absolute_url }}">{{ recent_post.title }}</a></li>
-    {% endfor %}
-    </ul>
+  <h3>{% trans "Recent Posts" %}</h3>
+  {% for recent_post in recent_posts %}
+  <h4>
+    <a class="text-capitalize" href="{{ recent_post.get_absolute_url }}">
+      {{ recent_post.title }}
+    </a>
+    <small style="padding-left:10px;">
+      {{ recent_post.publish_date|timesince }} {% trans "ago" %}
+    </small>
+  </h4>
+  <div class="recent-summary">
+    {{ recent_post.description|safe }}
+  </div>
+  <hr>
+  {% endfor %}
   {% endif %}
-{% endblock %}
+</div><!-- Recent Posts -->
 
 {% endblock %}
 
 <!-- TODO: TOP, AD and POPULAR panels on the right -->
 {% block right_panel_span %}{% endblock %}
 {% block right_panel %}
-    {% include "includes/user_panel.html" %}
-    <div class="panel">
-    </div>
+{% include "includes/user_panel.html" %}
+<div class="panel">
+</div>
 {% endblock %}
