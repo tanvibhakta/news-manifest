@@ -347,5 +347,5 @@ SEARCH_MODEL_CHOICES = []
 
 # Remove bottom and left menus
 PAGE_MENU_TEMPLATES = ( (1, "Top navigation bar", "pages/menus/dropdown.html"), )
-
+SITE_TITLE = "NewsWhys"
 # SITE_TITLE_LOGO = "./static/logos/logo_main_english.png"
