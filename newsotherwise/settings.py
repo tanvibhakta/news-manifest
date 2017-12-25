@@ -56,7 +56,7 @@ from django.utils.translation import ugettext_lazy as _
 # args and a dictionary of keyword args, to use when creating the
 # field instance. When specifying the field class, the path
 # ``django.models.db.`` can be omitted for regular Django model fields.
-#
+# #
 # EXTRA_MODEL_FIELDS = (
 #     (
 #         # Dotted path to field.
@@ -76,8 +76,8 @@ from django.utils.translation import ugettext_lazy as _
 #         {"blank": True, "default": 1},
 #     ),
 # )
-
-# Setting to turn on featured images for blog posts. Defaults to False.
+#
+# # Setting to turn on featured images for blog posts. Defaults to False.
 #
 # BLOG_USE_FEATURED_IMAGE = True
 
