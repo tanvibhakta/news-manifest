@@ -56,7 +56,7 @@ from django.utils.translation import ugettext_lazy as _
 # args and a dictionary of keyword args, to use when creating the
 # field instance. When specifying the field class, the path
 # ``django.models.db.`` can be omitted for regular Django model fields.
-# #
+
 # EXTRA_MODEL_FIELDS = (
 #     (
 #         # Dotted path to field.
@@ -76,10 +76,23 @@ from django.utils.translation import ugettext_lazy as _
 #         {"blank": True, "default": 1},
 #     ),
 # )
-#
-# # Setting to turn on featured images for blog posts. Defaults to False.
-#
-# BLOG_USE_FEATURED_IMAGE = True
+
+# EXTRA_MODEL_FIELDS = (
+#     (
+#         "mezzanine.pages.models.Page.featured_image",
+#         "mezzanine.core.fields.FileField",
+#         ("Header image",),
+#         {"blank": True,
+#          "null": True,
+#          "upload_to": "page_header",
+#          "format": "Image",
+#          "max_length": 255},
+#     ),
+# )
+
+# Setting to turn on featured images for blog posts. Defaults to False.
+
+BLOG_USE_FEATURED_IMAGE = True
 
 # If True, the django-modeltranslation will be added to the
 # INSTALLED_APPS setting.
@@ -92,7 +105,7 @@ USE_MODELTRANSLATION = False
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", "newswhys.com", "newzwhys.com", "newswhys.in"]
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
