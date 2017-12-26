@@ -22,7 +22,6 @@ body {
     overflow:hidden;
 }
 
-/* @media query { */
   .navbar-header span {
     /* margin: 0 0px 0 0; */
     display: inline-block;
@@ -30,7 +29,6 @@ body {
     margin-top: 0;
     margin-bottom: 0;
   }
-/* } */
 
 .navbar-toggle {
     z-index:3;
