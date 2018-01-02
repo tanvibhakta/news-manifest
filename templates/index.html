@@ -26,8 +26,8 @@
 </ul>
 {% endblocktrans %} -->
 
-<div><!-- Recent Posts -->
-  {% load blog_tags keyword_tags i18n %}
+ <div> Recent Posts
+  {% load blog_tags keyword_tags mezzanine_tags i18n %}
   {% blog_recent_posts 5 as recent_posts %}
   {% if recent_posts %}
   <h3>{% trans "Recent Posts" %}</h3>
@@ -36,16 +36,56 @@
     <a class="text-capitalize" href="{{ recent_post.get_absolute_url }}">
       {{ recent_post.title }}
     </a>
+
     <small style="padding-left:10px;">
       {{ recent_post.publish_date|timesince }} {% trans "ago" %}
     </small>
   </h4>
+  {% spaceless %}
+  <a class="text-capitalize" href="{{ recent_post.get_absolute_url }}">
+    {% if settings.BLOG_USE_FEATURED_IMAGE and recent_post.featured_image %}
+    <img class="img-thumbnail pull-left" src="{{ MEDIA_URL }}{% thumbnail recent_post.featured_image 100 100 %}" width="100" height="100">
+    {% endif %}
+  </a>
+  {% endspaceless %}
+
   <div class="recent-summary">
     {{ recent_post.description|safe }}
   </div>
   <hr>
   {% endfor %}
   {% endif %}
-</div><!-- Recent Posts -->
+</div> <!-- Recent Posts -->
+
+<!-- {% for blog_post in blog_posts.object_list %}
+{% block blog_post_list_post_title %}
+{% editable blog_post.title %}
+<h2>
+    <a href="{{ blog_post.get_absolute_url }}">{{ blog_post.title }}</a>
+</h2>
+{% endeditable %}
+{% endblock %}
+{% block blog_post_list_post_metainfo %}
+{% editable blog_post.publish_date %}
+<h6 class="post-meta">
+    {% trans "Posted by" %}:
+    {% with blog_post.user as author %}
+    <a href="{% url "blog_post_list_author" author %}">{{ author.get_full_name|default:author.username }}</a>
+    {% endwith %}
+    {% with blog_post.categories.all as categories %}
+    {% if categories %}
+    {% trans "in" %}
+    {% for category in categories %}
+    <a href="{% url "blog_post_list_category" category.slug %}">{{ category }}</a>{% if not forloop.last %}, {% endif %}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    {% blocktrans with sometime=blog_post.publish_date|timesince %}{{ sometime }} ago{% endblocktrans %}
+</h6>
+{% endeditable %}
+{% endblock %}
+
+
+{% endfor %} -->
 
 {% endblock %}
