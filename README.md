@@ -21,4 +21,4 @@ I also used mezzanine TODO
 ## Contact
 
 Email: mail@tanvibhakta.com
-Telegram: @padawanjack
+<!-- Telegram: @padawanjack -->
