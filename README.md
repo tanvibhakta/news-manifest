@@ -4,6 +4,7 @@
 2. Run it via ```source myvenv/bin/activate```
 3. If you haven't already, ```pip3 install -r requirements.txt```
 4. Run the server via ```python manage.py runserver <portnumber>```
+5. To deactivate the virtual environment run ```deactivate```
 
 ### Contribution
 
