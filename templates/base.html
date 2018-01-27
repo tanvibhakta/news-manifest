@@ -20,7 +20,8 @@
   <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
   <link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
   <link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">
-   <!--TODO: missing sheet on deploy why  -->
+  <link rel="stylesheet" type="text/css" href="{% static "css/thenewsreporter/responsive.css" %}" media="screen" />
+  <link rel="stylesheet" type="text/css" href="{% static "css/thenewsreporter/style.css" %}" media="screen" />
   <link rel="stylesheet" href="{% static "css/custom.css" %}">
   {% if LANGUAGE_BIDI %}
   <link rel="stylesheet" href="{% static "css/bootstrap-rtl.css" %}">
@@ -107,11 +108,23 @@
 
     <h1>{% block title %}{% endblock %}</h1>
 
-    <ul class="breadcrumb">
-      {% spaceless %}
-      {% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
-      {% endspaceless %}
-    </ul>
+    <div class="main_menu_area">
+      <ul id="nav">
+        <li><a href="#">world news</a>
+        <li><a href="#">sports</a></li>
+        <li><a href="#">tech</a>
+        <li><a href="#">business</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">entertainment</a></li>
+        <li><a href="#">culture</a></li>
+        <li><a href="#">Books</a>
+      </ul>
+    </div>
+      <!-- <ul class="breadcrumb">
+        {% spaceless %}
+        {% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
+        {% endspaceless %}
+      </ul> -->
 
   </div>
 
