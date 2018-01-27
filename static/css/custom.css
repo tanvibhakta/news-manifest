@@ -1,0 +1,45 @@
+body {
+  /* background-color: red; */
+  background-color: #eee;
+  font-family: 'Calibri', 'Candara', 'Segoe', 'Segoe UI', 'Optima', Arial, sans-serif;
+
+}
+
+.navbar-brand
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin:0 auto;
+}
+#logo {
+  /*position:absolute; */
+    margin-top:5px;
+    margin-bottom: 5px;
+    /*left:10px;*/
+    width:160px;
+    height:40px;
+    overflow:hidden;
+}
+
+  .navbar-header span {
+    /* margin: 0 0px 0 0; */
+    display: inline-block;
+    margin-left: 2.5px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+.navbar-toggle {
+    z-index:3;
+}
+
+/*TODO: decrease footer margins*/
+/*footer {
+  margin: 15px;
+}*/
+
+.fa {
+  margin: 2px;
+}
