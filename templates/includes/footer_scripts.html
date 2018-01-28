@@ -1,4 +1,4 @@
-{% load mezzanine_tags %}
+{% load mezzanine_tags staticfiles %}
 
 {% editable_loader %}
 
@@ -13,3 +13,6 @@ ga('create', '{{ settings.GOOGLE_ANALYTICS_ID }}', 'auto');
 ga('send', 'pageview');
 </script>
 {% endif %}
+<script type="text/javascript" src="{% static "js/thenewsreporter/jquery-min.js" %}"></script>
+<script type="text/javascript" src="{% static "js/thenewsreporter/jquery.bxslider.js" %}"></script>
+<script type="text/javascript" src="{% static "js/thenewsreporter/selectnav.min.js" %}"></script>
