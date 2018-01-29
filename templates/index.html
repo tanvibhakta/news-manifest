@@ -6,6 +6,7 @@
 
 
 {% block left_panel %}
+{% include "blog/includes/filter_panel.html" %}
 {% endblock left_panel %}
 
 {% block main %}
@@ -50,6 +51,7 @@
   <!-- <div class="panel panel-default"> -->
     <!-- <div class="panel-body"> -->
       {% block right_panel %}
+      {% include "blog/includes/filter_panel.html" %}
       {% endblock %}
     <!-- </div> -->
   <!-- </div> -->
