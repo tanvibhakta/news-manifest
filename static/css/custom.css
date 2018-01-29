@@ -5,6 +5,14 @@ body {
 
 }
 
+h3 {
+  color: inherit;
+  font-size: 24px;
+  font-weight: inherit;
+  margin-bottom: 10px;
+  line-height: inherit;
+}
+
 .navbar-brand
 {
     position: absolute;
@@ -34,6 +42,32 @@ body {
 .navbar-toggle {
     z-index:3;
 }
+
+li .navbar-right {
+  position: relative;
+  right: 30px;
+}
+
+.selectnav { display: none; }
+
+/* small screen */
+@media screen and (max-width: 600px) {
+  .js #nav { display: none; }
+  .js .selectnav { display: block; }
+}
+
+.left-divider {
+  padding-left: 20px;
+  border-left: 1px dashed black;
+  margin-left: 20px;
+}
+
+.right-divider {
+  padding-right: 20px;
+  border-right: 1px dashed black;
+  margin-right: 20px;
+}
+
 
 /*TODO: decrease footer margins*/
 /*footer {
