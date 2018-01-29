@@ -3,7 +3,7 @@
 {% block blog_recent_posts %}
 {% blog_recent_posts 5 as recent_posts %}
 {% if recent_posts %}
-<h3>{% trans "Recent Posts" %}</h3>
+<h3>{% trans "Popular Posts" %}</h3>
 <ul class="list-unstyled recent-posts">
 {% for recent_post in recent_posts %}
 <li>

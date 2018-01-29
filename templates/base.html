@@ -110,12 +110,16 @@
 
   <div class="container">
       <h1>{% block title %}{% endblock %}</h1>
-      {% block breadcrumb_menu %}{% endblock %}
+      <!-- {% block breadcrumb_menu %}{% endblock %} -->
 
   </div>
 
   <!-- <div class="container"> -->
     <div class="row">
+
+<div class="col-md-1">
+  <!-- Filler column -->
+</div>
 
       <div class="col-md-3 left">
         <!-- <div class=""> -->
@@ -130,13 +134,14 @@
       </div>
 
       <div class="col-md-3 right">
-        {% block right_panel %}{% endblock %}
+        {% block right_panel %}
+        {% endblock %}
       </div>
 
   </div>
 <!-- </div> -->
 
-<footer>
+<footer class="fixed-bottom">
   <div class="container">
     <!-- {% page_menu "pages/menus/footer.html" %} -->
     <div class="row">
