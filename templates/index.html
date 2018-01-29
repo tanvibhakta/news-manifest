@@ -4,17 +4,17 @@
 {% block meta_title %}{% trans "Home" %}{% endblock %}
 {% block title %}{% trans "Home" %}{% endblock %}
 
-<!-- {% block breadcrumb_menu %}
-<li class="active">{% trans "Home" %}</li>
-{% endblock %} -->
+
+{% block left_panel %}
+{% endblock left_panel %}
 
 {% block main %}
 
- <div>
+ <div class="">
   {% load blog_tags keyword_tags mezzanine_tags i18n %}
   {% blog_recent_posts 5 as recent_posts %}
   {% if recent_posts %}
-  <h3>{% trans "Recent Posts" %}</h3>
+  <!-- <h3>{% trans "Recent Posts" %}</h3> -->
   {% for recent_post in recent_posts %}
   <h4>
     <a class="text-capitalize" href="{{ recent_post.get_absolute_url }}">
@@ -41,35 +41,15 @@
   {% endif %}
 </div> <!-- Recent Posts -->
 
-<!-- {% for blog_post in blog_posts.object_list %}
-{% block blog_post_list_post_title %}
-{% editable blog_post.title %}
-<h2>
-    <a href="{{ blog_post.get_absolute_url }}">{{ blog_post.title }}</a>
-</h2>
-{% endeditable %}
-{% endblock %}
-{% block blog_post_list_post_metainfo %}
-{% editable blog_post.publish_date %}
-<h6 class="post-meta">
-    {% trans "Posted by" %}:
-    {% with blog_post.user as author %}
-    <a href="{% url "blog_post_list_author" author %}">{{ author.get_full_name|default:author.username }}</a>
-    {% endwith %}
-    {% with blog_post.categories.all as categories %}
-    {% if categories %}
-    {% trans "in" %}
-    {% for category in categories %}
-    <a href="{% url "blog_post_list_category" category.slug %}">{{ category }}</a>{% if not forloop.last %}, {% endif %}
-    {% endfor %}
-    {% endif %}
-    {% endwith %}
-    {% blocktrans with sometime=blog_post.publish_date|timesince %}{{ sometime }} ago{% endblocktrans %}
-</h6>
-{% endeditable %}
-{% endblock %}
+{% endblock main%}
 
-
-{% endfor %} -->
-
-{% endblock %}
+  <!-- {% nevercache %}
+  {% include "includes/language_selector.html" %}
+  {% include "includes/user_panel.html" %}
+  {% endnevercache %} -->
+  <!-- <div class="panel panel-default"> -->
+    <!-- <div class="panel-body"> -->
+      {% block right_panel %}
+      {% endblock %}
+    <!-- </div> -->
+  <!-- </div> -->

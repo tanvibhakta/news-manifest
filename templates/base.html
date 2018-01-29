@@ -62,7 +62,7 @@
           <span class="icon-bar"></span>
         </button>
         <span class="nav navbar-nav navbar-left">
-            {% if settings.SITE_TITLE %}<a class="" href="/"><img id="logo" src="{% static "logos/logo_main_english.svg" %}" alt="logo"></a>{% endif %}
+            {% if settings.SITE_TITLE %}<a class="" href="/"><img id="logo" src="{% static "img/logo_main_english.svg" %}" alt="logo"></a>{% endif %}
         </span>
         {% block navbar_title %}
         <!-- {% if settings.SITE_TITLE %}<a class="navbar-brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %} -->
@@ -83,82 +83,58 @@
           <li><a href="https://plus.google.com/u/1/103368278925712009285"><i class="fa fa-google-plus"></i></a></li>
           <li><a href="https://in.pinterest.com/NewzWhys/"><i class="fa fa-pinterest"></i></a></li>
           <!-- <li><a href="#"><i class="fa fa-bookmark"></i></a></li> -->
-
-          <li>{% block navbar_search_form %}{% search_form "all" %}{% endblock %}</li>
         </ul>
         <!-- {% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock%} -->
       </div>
     </div>
   </div>
 
-  <div class="container">
 
-    {% nevercache %}
-    {% if messages %}
-    <div class="messages">
-      {% for message in messages %}
-      <div class="alert alert-dismissable alert-{{ message.tags }}" data-alert="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        {{ message }}
-      </div>
-      {% endfor %}
-    </div>
-    {% endif %}
-    {% endnevercache %}
+  <div class="main_menu_area">
+    <div class="container">
+    <!-- TODO: make mobile layout responsive -->
+    <ul id="nav">
+      <li><a href="#">World News</a>
+      <li><a href="#">Sports</a></li>
+      <li><a href="#">Tech</a>
+      <li><a href="#">Business</a></li>
+      <li><a href="#">Movies</a></li>
+      <li><a href="#">Entertainment</a></li>
+      <li><a href="#">Culture</a></li>
+      <li><a href="#">Books</a>
+      <li class="navbar-right">{% block navbar_search_form %}{% search_form "all" %}{% endblock %}</li>
 
-    <h1>{% block title %}{% endblock %}</h1>
-
-    <div class="main_menu_area">
-      <ul id="nav">
-        <li><a href="#">world news</a>
-        <li><a href="#">sports</a></li>
-        <li><a href="#">tech</a>
-        <li><a href="#">business</a></li>
-        <li><a href="#">Movies</a></li>
-        <li><a href="#">entertainment</a></li>
-        <li><a href="#">culture</a></li>
-        <li><a href="#">Books</a>
-      </ul>
-    </div>
-      <!-- <ul class="breadcrumb">
-        {% spaceless %}
-        {% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
-        {% endspaceless %}
-      </ul> -->
-
+    </ul>
+  </div>
   </div>
 
   <div class="container">
+      <h1>{% block title %}{% endblock %}</h1>
+      {% block breadcrumb_menu %}{% endblock %}
+
+  </div>
+
+  <!-- <div class="container"> -->
     <div class="row">
 
-      <!-- <div class="col-md-2 left">
-      {% block left_panel %}
-      <div class="panel panel-default tree">{% page_menu "pages/menus/tree.html" %}</div>
-      {% endblock %}
-    </div> -->
-
-    <div class="col-md-7 middle">
-      {% block main %}{% endblock %}
-    </div>
-
-    <!-- <div class="col-md-3 right">
-      {% nevercache %}
-      {% include "includes/language_selector.html" %}
-      {% include "includes/user_panel.html" %}
-      {% endnevercache %}
-      <div class="panel panel-default">
-        <div class="panel-body">
-          {% block right_panel %}
-          {% ifinstalled mezzanine.twitter %}
-          {% include "twitter/tweets.html" %}
-          {% endifinstalled %}
-          {% endblock %}
-        </div>
+      <div class="col-md-3 left">
+        <!-- <div class=""> -->
+          <!-- <div class=""> -->
+            {% block left_panel %}{% endblock %}
+          <!-- </div> -->
+        <!-- </div> -->
       </div>
-    </div> -->
+
+      <div class="col-md-5 middle">
+        {% block main %}{% endblock %}
+      </div>
+
+      <div class="col-md-3 right">
+        {% block right_panel %}{% endblock %}
+      </div>
 
   </div>
-</div>
+<!-- </div> -->
 
 <footer>
   <div class="container">
@@ -187,6 +163,22 @@
 
 {% block footer_js %}
 {% include "includes/footer_scripts.html" %}
+<script type="text/javascript">
+selectnav('nav', {
+    label: '-Navigation-',
+    nested: true,
+    indent: '-'
+});
+selectnav('f_menu', {
+    label: '-Navigation-',
+    nested: true,
+    indent: '-'
+});
+$('.bxslider').bxSlider({
+    mode: 'fade',
+    captions: true
+});
+</script>
 {% endblock %}
 
 </body>
